@@ -1,0 +1,29 @@
+set_automatic_cover_position:
+  name: Automatic cover position
+  description: Set the cover position according to the sun and window position
+  target:
+    entity:
+      domain: cover
+  fields:
+    target_solar_irradiation_percent:
+      name: Target solar irradiation in percent
+      description: How many percent of the window's surface should be left for the solar irradiation
+      required: true
+      advanced: false
+      example: 10
+      default: 10
+      selector:
+        number:
+          min: 0
+          max: 100
+    minimum_sun_elevation:
+      name: Minimum sun elevation
+      description: Below this elevation, the cover will fully open because the sun is considered to be set
+      required: false
+      advanced: false
+      example: 10
+      default: 10
+      selector:
+        number:
+          min: 0
+          max: 90
